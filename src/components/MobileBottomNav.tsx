@@ -1,6 +1,7 @@
-import { LayoutGrid, Calendar, Plus } from 'lucide-react';
+import { LayoutGrid, Calendar, Plus, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { AddSubjectDialog } from './AddSubjectDialog';
+import { usePWA } from '@/hooks/usePWA';
 
 interface MobileBottomNavProps {
   activeTab: string;
@@ -9,6 +10,7 @@ interface MobileBottomNavProps {
 }
 
 export function MobileBottomNav({ activeTab, onTabChange, onAddSubject }: MobileBottomNavProps) {
+  const { isInstallable, isIOS, installApp, isInstalled } = usePWA();
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around bg-background/95 backdrop-blur border-t px-2 pb-safe pt-2 md:hidden shadow-[0_-10px_40px_rgba(0,0,0,0.1)] dark:shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
       <button 
@@ -38,6 +40,16 @@ export function MobileBottomNav({ activeTab, onTabChange, onAddSubject }: Mobile
         <Calendar className="h-5 w-5 mb-1" />
         <span className="text-[10px] font-bold">Schedule</span>
       </button>
+
+      {(!isInstalled && (isInstallable || isIOS)) && (
+        <button 
+          onClick={installApp}
+          className="flex flex-col items-center justify-center p-2 w-20 h-14 rounded-xl text-primary animate-pulse transition-all"
+        >
+          <Download className="h-5 w-5 mb-1" />
+          <span className="text-[10px] font-bold">Install App</span>
+        </button>
+      )}
     </div>
   );
 }
