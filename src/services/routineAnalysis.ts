@@ -48,12 +48,9 @@ export async function analyzeRoutine(
   preferredProvider: 'groq' | 'openrouter' | 'openai' = 'groq'
 ): Promise<AnalysisResponse> {
   // Define the order of providers to try, starting with the user's preference
-  const providers: ('groq' | 'openrouter' | 'openai')[] = [preferredProvider];
+  const providers: ('groq' | 'openrouter' | 'openai')[] = ['groq'];
   
-  // Add other available providers as fallbacks
-  if (!providers.includes('groq')) providers.push('groq');
-  if (!providers.includes('openai')) providers.push('openai');
-  if (!providers.includes('openrouter')) providers.push('openrouter');
+  // Removed other fallbacks to strictly use Grok as requested
 
   let lastError: any = null;
 

@@ -183,7 +183,7 @@ export function RoutineImporter({ onImport, aiProvider = 'groq' }: RoutineImport
               {isAnalyzing ? (
                 <div className="flex flex-col items-center gap-4">
                   <Loader2 className="w-12 h-12 text-primary animate-spin" />
-                  <p className="text-muted-foreground animate-pulse">Analyzing routine with AI...</p>
+                  <p className="text-muted-foreground animate-pulse">Analyzing routine... Powered by Grok AI</p>
                 </div>
               ) : (
                 <div className="flex flex-col items-center gap-4 text-center">
@@ -308,7 +308,7 @@ export function RoutineImporter({ onImport, aiProvider = 'groq' }: RoutineImport
         </div>
 
         <DialogFooter className="text-[10px] text-muted-foreground text-center">
-          Powered by Gemini AI • Always verify extracted data.
+          Powered by Grok AI • Always verify extracted data.
         </DialogFooter>
       </DialogContent>
     </Dialog>
