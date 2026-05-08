@@ -33,9 +33,9 @@ const GROQ_MODELS = [
 ];
 
 const OPENROUTER_MODELS = [
-  "google/gemini-2.0-flash-001",
-  "google/gemini-2.0-flash-lite-001",
-  "openai/gpt-4o-mini"
+  "openai/gpt-4o",
+  "anthropic/claude-3.5-sonnet",
+  "google/gemini-2.0-flash-001"
 ];
 
 const OPENAI_MODELS = [
@@ -45,12 +45,12 @@ const OPENAI_MODELS = [
 
 export async function analyzeRoutine(
   file: File, 
-  preferredProvider: 'groq' | 'openrouter' | 'openai' = 'groq'
+  preferredProvider: 'groq' | 'openrouter' | 'openai' = 'openrouter'
 ): Promise<AnalysisResponse> {
   // Define the order of providers to try, starting with the user's preference
-  const providers: ('groq' | 'openrouter' | 'openai')[] = ['groq'];
+  const providers: ('groq' | 'openrouter' | 'openai')[] = ['openrouter'];
   
-  // Removed other fallbacks to strictly use Grok as requested
+  // Removed other fallbacks to strictly use OpenRouter as requested
 
   let lastError: any = null;
 
