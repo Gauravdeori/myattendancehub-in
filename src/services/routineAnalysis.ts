@@ -33,12 +33,11 @@ const GROQ_MODELS = [
 ];
 
 const OPENROUTER_MODELS = [
+  "google/gemini-2.0-flash-001",
   "openai/gpt-4o",
   "anthropic/claude-3.5-sonnet",
   "openai/gpt-4o-mini",
-  "google/gemini-2.0-flash-001",
-  "nvidia/nemotron-nano-12b-v2-vl:free",
-  "google/gemini-2.0-flash-lite-preview-02-05:free"
+  "nvidia/nemotron-nano-12b-v2-vl:free"
 ];
 
 const OPENAI_MODELS = [
