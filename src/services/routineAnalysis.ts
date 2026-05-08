@@ -45,12 +45,12 @@ const OPENAI_MODELS = [
 
 export async function analyzeRoutine(
   file: File, 
-  preferredProvider: 'groq' | 'openrouter' | 'openai' = 'openrouter'
+  preferredProvider: 'groq' | 'openrouter' | 'openai' = 'openai'
 ): Promise<AnalysisResponse> {
   // Define the order of providers to try, starting with the user's preference
-  const providers: ('groq' | 'openrouter' | 'openai')[] = ['openrouter'];
+  const providers: ('groq' | 'openrouter' | 'openai')[] = ['openai'];
   
-  // Removed other fallbacks to strictly use OpenRouter as requested
+  // Removed other fallbacks to strictly use OpenAI as requested
 
   let lastError: any = null;
 
