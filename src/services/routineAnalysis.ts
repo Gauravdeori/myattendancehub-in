@@ -33,7 +33,6 @@ const GROQ_MODELS = [
 ];
 
 const OPENROUTER_MODELS = [
-  "google/gemini-2.0-pro-exp-02-05",
   "openai/gpt-4o",
   "anthropic/claude-3.5-sonnet",
   "google/gemini-2.0-flash-001"
