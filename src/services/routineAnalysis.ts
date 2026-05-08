@@ -33,6 +33,10 @@ const GROQ_MODELS = [
 ];
 
 const OPENROUTER_MODELS = [
+  "openrouter/free",
+  "nvidia/nemotron-nano-12b-v2-vl:free",
+  "google/gemini-2.0-flash-lite-preview-02-05:free",
+  "meta-llama/llama-3.2-11b-vision-instruct:free",
   "openai/gpt-4o",
   "anthropic/claude-3.5-sonnet",
   "google/gemini-2.0-flash-001"
